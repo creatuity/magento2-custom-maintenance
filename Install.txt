@@ -1,0 +1,14 @@
+1. Copy 'app' and 'pub' folders to the root of the Magento 2 project.
+2. Install magento module. 
+        bin/magento setup:upgrade
+3. Because maintenance module works in 'pub' folder, 
+   we need to ensure that file persmissions are properly set,
+   accordingly to Magento 2 documentation. For Ubuntu that might be:
+        chown -R :www-data pub/errors/creatuity_maintenance/
+        find pub/errors/creatuity_maintenance/ -type d -exec chmod 770 {} \; 
+        find pub/errors/creatuity_maintenance/ -type f -exec chmod 660 {} \;
+4. Flush caches. Example:
+        bin/magento cache:flush
+        rm -rf var/generation
+
+

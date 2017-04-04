@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="admin_system_config_changed_section_creatuity_custommaintenance">
+        <observer name="cutommaintenance" instance="Creatuity\CustomMaintenance\Model\Maintenance\Observer\RebuildAll" />
+    </event>
+    <event name="store_add">
+        <observer name="cutommaintenance" instance="Creatuity\CustomMaintenance\Model\Maintenance\Observer\RebuildAll" />
+    </event>
+    <event name="store_edit">
+        <observer name="cutommaintenance" instance="Creatuity\CustomMaintenance\Model\Maintenance\Observer\RebuildAll" />
+    </event>
+    <event name="store_delete">
+        <observer name="cutommaintenance" instance="Creatuity\CustomMaintenance\Model\Maintenance\Observer\RebuildAll" />
+    </event>
+</config>
