@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="creatuity" translate="label" sortOrder="200">
+             <label>Creatuity</label>
+        </tab>
+        <section id="creatuity_custommaintenance" translate="label" type="text" sortOrder="320" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Custom Maintenance</label>
+            <tab>creatuity</tab>
+            <resource>Creatuity_CustomMaintenance::configuration</resource>
+            <group id="preview" translate="label" type="text"  sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="preview_description" translate="label comment" sortOrder="5" type="label" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <comment><![CDATA[
+                        Preview is available only on the store scope. <br>
+                        Please change scope to store, using <em>"Store View:"</em> switcher at the top-left corner.
+                    ]]></comment>
+                </field>
+                <label>Preview</label>
+                <field id="preview" translate="label comment" sortOrder="5" type="button" showInDefault="0" showInWebsite="0" showInStore="1">
+                    <label>Preview</label>
+                    <frontend_model>Creatuity\CustomMaintenance\Block\Adminhtml\System\Config\Form\Preview\Button</frontend_model>
+                </field>
+            </group>
+            <group id="general" translate="label" type="text"  sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="rebuild" translate="label comment" sortOrder="5" type="button" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Rebuild</label>
+                    <frontend_model>Creatuity\CustomMaintenance\Block\Adminhtml\System\Config\Form\Button</frontend_model>
+                </field>
+                 <field id="logo" translate="label comment" sortOrder="6" type="image" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Logo image</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <upload_dir>pub/errors/creatuity_maintenance/maintenance_creatuity_default/images</upload_dir>
+                    <base_url type="web">pub/errors/creatuity_maintenance/maintenance_creatuity_default/images</base_url>
+                </field>
+                <field id="background_color" translate="label comment" sortOrder="7" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background Color</label>
+                    <validate>color {required:false,hash:true}</validate>
+                </field>
+                <field id="side_background_color" translate="label comment" sortOrder="8" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Side Background Color</label>
+                    <validate>color {required:false,hash:true}</validate>
+                </field>
+                <field id="footer_and_header_background_color" translate="label comment" sortOrder="9" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Footer and Header Background Color</label>
+                    <validate>color {required:false,hash:true}</validate>
+                </field>
+                <field id="title" translate="label comment" sortOrder="10" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                 <field id="title_font_color" translate="label comment" sortOrder="10" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title Font Color</label>
+                    <validate>color {required:false,hash:true}</validate>
+                </field>
+                <field id="copyright" translate="label comment" sortOrder="12" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Copyright</label>
+                </field>
+                <field id="copyright_color" translate="label comment" sortOrder="13" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Copyright Font Color</label>
+                    <validate>color {required:false,hash:true}</validate>
+                </field>
+                <field id="notification_text" translate="label comment" sortOrder="14" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Notification text</label>
+                </field>
+                <field id="notification_font_color" translate="label comment" sortOrder="15" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Notification Font Color</label>
+                    <validate>color {required:false,hash:true}</validate>
+                </field>
+                <field id="enable_tooltips" translate="label" type="select" sortOrder="17" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable tooltips</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="email_tooltip" translate="label comment" sortOrder="18" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email tooltip text</label>
+                    <validate>validate-email</validate>
+                    <depends>
+                        <field id="enable_tooltips">1</field>
+                    </depends>
+                </field>
+                <field id="phone_tooltip" translate="label comment" sortOrder="19" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Phone tooltip text</label>
+                    <depends>
+                        <field id="enable_tooltips">1</field>
+                    </depends>
+                </field>
+                <field id="counter_animation" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable counter animation</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title_animation" translate="label" type="select" sortOrder="21" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable title animation</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="contact" translate="label" type="text"  sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Contact on Maintenance Page</label>
+                <field id="email" translate="label comment" sortOrder="7" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email contact address</label>
+                </field>
+                <field id="phone_number" translate="label comment" sortOrder="8" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Phone number</label>
+                </field>
+            </group>
+            <group id="social_media" translate="label" type="text"  sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Social Media</label>
+                <field id="rotating_icons" translate="label comment" sortOrder="1" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Rotating Social Media Icons</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="enable_facebook" translate="label comment" sortOrder="2" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Facebook</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="facebook" translate="label comment" sortOrder="3" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Facebook page URL</label>
+                    <validate>validate-url</validate>
+                    <depends>
+                        <field id="enable_facebook">1</field>
+                    </depends>
+                </field>
+                <field id="enable_twitter" translate="label comment" sortOrder="4" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Twitter</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="twitter" translate="label comment" sortOrder="5" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Twitter page URL</label>
+                    <validate>validate-url</validate>
+                    <depends>
+                        <field id="enable_twitter">1</field>
+                    </depends>
+                </field>
+                <field id="enable_youtube" translate="label comment" sortOrder="6" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Youtube</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="youtube" translate="label comment" sortOrder="7" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Youtube page URL</label>
+                    <validate>validate-url</validate>
+                    <depends>
+                        <field id="enable_youtube">1</field>
+                    </depends>
+                </field>
+               <field id="enable_google" translate="label comment" sortOrder="8" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Google</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="google" translate="label comment" sortOrder="9" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Google page URL</label>
+                    <validate>validate-url</validate>
+                    <depends>
+                        <field id="enable_google">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

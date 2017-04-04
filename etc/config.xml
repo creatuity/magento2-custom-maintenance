@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <creatuity_custommaintenance>
+            <general>
+                <background_color>#FFFFFE</background_color>
+                <side_color>#FFFFFE</side_color>
+                <footer_header_color>#343F53</footer_header_color>
+                <copyright>Copyright &amp;copy; 2017 Magento. All rights reserved.</copyright>
+                <phone_tooltip>Call us!</phone_tooltip>
+                <email_tooltip>Email us!</email_tooltip>
+                <notification_text>The server is temporarily unable to service your request due to maintenance downtime or capacity problems. We will be back soon.</notification_text>
+                <title>We will be back soon</title>
+                <logo>logo.png</logo>
+                <title_font_color>#000000</title_font_color>
+                <notification_font_color>#000000</notification_font_color>
+                <copyright_font_color>#000000</copyright_font_color>
+            </general>
+        </creatuity_custommaintenance>
+    </default>
+</config>
