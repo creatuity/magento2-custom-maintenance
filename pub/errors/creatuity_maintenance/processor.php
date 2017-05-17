@@ -149,18 +149,6 @@ class Processor extends BaseProcessor
 
     protected function determineStoreCode()
     {
-        if (!empty($GLOBALS['CREATUITY_MAINTENANCE_STORE'])) {
-            return $GLOBALS['CREATUITY_MAINTENANCE_STORE'];
-        }
-
-        if (defined('CREATUITY_MAINTENANCE_STORE')) {
-            return CREATUITY_MAINTENANCE_STORE;
-        }
-
-        if (!empty($_COOKIE['store'])) {
-            return $_COOKIE['store'];
-        }
-
         $mageRunType = isset($_SERVER[StoreManager::PARAM_RUN_TYPE])
             ? $_SERVER[StoreManager::PARAM_RUN_TYPE]
             : 'store';
