@@ -1,64 +1,64 @@
-<?php /* @var $this \Creatuity\CustomMaintenance\Block\Adminhtml\Maintenance\Page */ ?>
+<?php /* @var $block \Creatuity\CustomMaintenance\Block\Adminhtml\Maintenance\Page */ ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-    <title><?php echo $this->getTitle() ?></title>
+    <title><?php echo $block->getTitle() ?></title>
     <meta http-equiv="refresh" content="120"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="description" content=""/>
     <meta name="robots" content="*"/>
     <meta name="robots" content="noindex, nofollow"/>
     <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0"/>
-    <link rel="stylesheet" href="<?php echo $this->defaultsUrl('css/styles.css'); ?>" type="text/css"/>
-    <link rel="stylesheet" href="<?php echo $this->defaultsUrl('css/font-awesome.min.css'); ?>"/>
-    <link rel="icon" href="<?php echo $this->defaultsUrl('images/favicon.ico'); ?>" type="image/x-icon"/>
-    <link rel="shortcut icon" href="<?php echo $this->defaultsUrl('images/favicon.ico'); ?>" type="image/x-icon"/>
-    <script src="<?php echo $this->defaultsUrl('js/countdown.js') ?>"></script>
+    <link rel="stylesheet" href="<?php echo $block->defaultsUrl('css/styles.css'); ?>" type="text/css"/>
+    <link rel="stylesheet" href="<?php echo $block->defaultsUrl('css/font-awesome.min.css'); ?>"/>
+    <link rel="icon" href="<?php echo $block->defaultsUrl('images/favicon.ico'); ?>" type="image/x-icon"/>
+    <link rel="shortcut icon" href="<?php echo $block->defaultsUrl('images/favicon.ico'); ?>" type="image/x-icon"/>
+    <script src="<?php echo $block->defaultsUrl('js/countdown.js') ?>"></script>
 </head>
-<body <?php if ($this->getFooterAndHeaderBackgroundColor()): ?><?php echo "style=" . "\"background:" . $this->getFooterAndHeaderBackgroundColor() . "\"" ?><?php endif; ?>>
+<body <?php if ($block->getFooterAndHeaderBackgroundColor()): ?><?php echo "style=" . "\"background:" . $block->getFooterAndHeaderBackgroundColor() . "\"" ?><?php endif; ?>>
 <div class="wrapper">
     <div class="page">
         <div class="header-container">
             <div class="header">
             </div>
         </div>
-        <div class="main-container" <?php if ($this->getSideBackgroundColor()): ?><?php echo "style=" . "\"background:" . $this->getSideBackgroundColor() . "\"" ?><?php endif; ?>>
-            <div class="main col1-layout" <?php if ($this->getBackgroundColor()): ?><?php echo "style=" . "\"background:" . $this->getBackgroundColor() . "\"" ?><?php endif; ?>>
+        <div class="main-container" <?php if ($block->getSideBackgroundColor()): ?><?php echo "style=" . "\"background:" . $block->getSideBackgroundColor() . "\"" ?><?php endif; ?>>
+            <div class="main col1-layout" <?php if ($block->getBackgroundColor()): ?><?php echo "style=" . "\"background:" . $block->getBackgroundColor() . "\"" ?><?php endif; ?>>
                 <div id="main" class="col-main">
                     <div class="logo-container">
-                        <?php if ($this->getLogo()): ?>
-                            <a href="<?php echo $this->url('/'); ?>" title="Magento Commerce" class="logo"><img
-                                        src="<?php echo $this->defaultsUrl('images/'); ?><?php echo $this->getLogo() ?>"
+                        <?php if ($block->getLogo()): ?>
+                            <a href="<?php echo $block->url('/'); ?>" title="Magento Commerce" class="logo"><img
+                                        src="<?php echo $block->defaultsUrl('images/'); ?><?php echo $block->getLogo() ?>"
                                         alt="Magento Commerce"/></a>
                         <?php endif; ?>
                     </div>
-                    <?php if ($this->getTitle()): ?>
-                        <div class="page-title <?php if ($this->isTitleAnimationEnabled()): ?><?php echo ' top-down-animation' ?><?php endif; ?>">
-                            <h1 <?php if ($this->getTitleFontColor()): ?><?php echo "style=" . "\"color:" . $this->getTitleFontColor() . "\"" ?><?php endif; ?>><?php echo $this->getTitle() ?></h1>
+                    <?php if ($block->getTitle()): ?>
+                        <div class="page-title <?php if ($block->isTitleAnimationEnabled()): ?><?php echo ' top-down-animation' ?><?php endif; ?>">
+                            <h1 <?php if ($block->getTitleFontColor()): ?><?php echo "style=" . "\"color:" . $block->getTitleFontColor() . "\"" ?><?php endif; ?>><?php echo $block->getTitle() ?></h1>
                         </div>
                     <?php endif; ?>
-                    <?php if ($this->getNotification()): ?>
-                        <p <?php if ($this->getNotificationFontColor()): ?><?php echo "style=" . "\"color:" . $this->getNotificationFontColor() . "\"" ?><?php endif; ?>><?php echo $this->getNotification() ?></p>
+                    <?php if ($block->getNotification()): ?>
+                        <p <?php if ($block->getNotificationFontColor()): ?><?php echo "style=" . "\"color:" . $block->getNotificationFontColor() . "\"" ?><?php endif; ?>><?php echo $block->getNotification() ?></p>
                     <?php endif; ?>
-                    <div class="counter<?php if ($this->isCounterAnimationEnabled()): ?><?php echo ' animation' ?><?php endif; ?>">
-                        <script src="<?php echo $this->url('/', ['creatuity_maintenance_countdown_data' => '1',]); ?>"
+                    <div class="counter<?php if ($block->isCounterAnimationEnabled()): ?><?php echo ' animation' ?><?php endif; ?>">
+                        <script src="<?php echo $block->url('/', ['creatuity_maintenance_countdown_data' => '1',]); ?>"
                                 type="text/javascript"></script>
                     </div>
-                    <?php if ($this->getEmail()): ?>
+                    <?php if ($block->getEmail()): ?>
                         <div class="contact-us">
-                            <?php if ($this->areTooltipsEnabled() && $this->getEmailTooltip()): ?>
-                                <div class="tooltip"><?php echo $this->getEmailTooltip() ?></div>
+                            <?php if ($block->areTooltipsEnabled() && $block->getEmailTooltip()): ?>
+                                <div class="tooltip"><?php echo $block->getEmailTooltip() ?></div>
                             <?php endif; ?>
                             <i class="fa fa-envelope"></i> <a
-                                    href="mailto:<?php echo $this->getEmail() ?>"><?php echo $this->getEmail() ?></a>
+                                    href="mailto:<?php echo $block->getEmail() ?>"><?php echo $block->getEmail() ?></a>
                         </div>
                     <?php endif; ?>
-                    <?php if ($this->getPhoneNumber()): ?>
+                    <?php if ($block->getPhoneNumber()): ?>
                         <div class="call-us">
-                            <?php if ($this->areTooltipsEnabled() && $this->getPhoneTooltip()): ?>
-                                <div class="tooltip"><?php echo $this->getPhoneTooltip() ?></div>
+                            <?php if ($block->areTooltipsEnabled() && $block->getPhoneTooltip()): ?>
+                                <div class="tooltip"><?php echo $block->getPhoneTooltip() ?></div>
                             <?php endif; ?>
                             <i class="fa fa-phone"></i><a
-                                    href="tel:<?php echo $this->getPhoneNumber() ?>"><?php echo $this->getPhoneNumber() ?></a>
+                                    href="tel:<?php echo $block->getPhoneNumber() ?>"><?php echo $block->getPhoneNumber() ?></a>
                         </div>
                     <?php endif; ?>
                 </div>
@@ -66,35 +66,35 @@
         </div>
         <div class="footer-container">
             <div class="footer">
-                <div class="social-media<?php if ($this->checkIfRotatingIconsEnabled()): ?><?php echo ' rotating' ?><?php endif; ?>">
+                <div class="social-media<?php if ($block->checkIfRotatingIconsEnabled()): ?><?php echo ' rotating' ?><?php endif; ?>">
                     <ul class="sharing-links">
-                        <?php if ($this->isFacebookEnabled()): ?>
+                        <?php if ($block->isFacebookEnabled()): ?>
                             <li>
-                                <a href="<?php echo $this->getFacebookPageUrl() ?>" target="_blank" title="Facebook"
+                                <a href="<?php echo $block->getFacebookPageUrl() ?>" target="_blank" title="Facebook"
                                    class="link-facebook">
                                     <i class="fa fa-facebook"></i>
                                 </a>
                             </li>
                         <?php endif; ?>
-                        <?php if ($this->isTwitterEnabled()): ?>
+                        <?php if ($block->isTwitterEnabled()): ?>
                             <li>
-                                <a href="<?php echo $this->getTwitterPageUrl() ?>" target="_blank" title="Twitter"
+                                <a href="<?php echo $block->getTwitterPageUrl() ?>" target="_blank" title="Twitter"
                                    class="link-twitter">
                                     <i class="fa fa-twitter"></i>
                                 </a>
                             </li>
                         <?php endif; ?>
-                        <?php if ($this->isYoutubeEnabled()): ?>
+                        <?php if ($block->isYoutubeEnabled()): ?>
                             <li>
-                                <a href="<?php echo $this->getYoutubePageUrl() ?>" target="_blank" title="Youtube"
+                                <a href="<?php echo $block->getYoutubePageUrl() ?>" target="_blank" title="Youtube"
                                    class="link-youtube">
                                     <i class="fa fa-youtube"></i>
                                 </a>
                             </li>
                         <?php endif; ?>
-                        <?php if ($this->isGoogleEnabled()): ?>
+                        <?php if ($block->isGoogleEnabled()): ?>
                             <li>
-                                <a href="<?php echo $this->getGooglePageUrl() ?>" target="_blank" title="Google"
+                                <a href="<?php echo $block->getGooglePageUrl() ?>" target="_blank" title="Google"
                                    class="link-google">
                                     <i class="fa fa-google-plus"></i>
                                 </a>
@@ -102,9 +102,9 @@
                         <?php endif; ?>
                     </ul>
                 </div>
-                <?php if ($this->getCopyright()): ?>
+                <?php if ($block->getCopyright()): ?>
                     <address
-                            class="copyright" <?php if ($this->getCopyrightFontColor()): ?><?php echo "style=" . "\"color:" . $this->getCopyrightFontColor() . "\"" ?><?php endif; ?>><?php echo $this->getCopyright() ?></address>
+                            class="copyright" <?php if ($block->getCopyrightFontColor()): ?><?php echo "style=" . "\"color:" . $block->getCopyrightFontColor() . "\"" ?><?php endif; ?>><?php echo $block->getCopyright() ?></address>
                 <?php endif; ?>
             </div>
         </div>

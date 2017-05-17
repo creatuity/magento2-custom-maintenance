@@ -1,10 +1,4 @@
 <?php
-/**
- * @category       Creatuity
- * @package        Magento 2 Custom Maintenance
- * @copyright      Copyright (c) 2008-2017 Creatuity Corp. (http://www.creatuity.com)
- * @license        http://creatuity.com/license/
- */
 
 namespace Creatuity\CustomMaintenance\Model;
 
@@ -14,10 +8,12 @@ use Magento\Framework\Filesystem\Directory\WriteInterface;
 use Magento\Framework\View\Element\BlockFactory;
 use Magento\Store\Model\StoreManagerInterface;
 
-class MaintenanceException extends \Exception
-{
-}
-
+/**
+ * @category       Creatuity
+ * @package        Magento 2 Custom Maintenance
+ * @copyright      Copyright (c) 2008-2017 Creatuity Corp. (http://www.creatuity.com)
+ * @license        http://creatuity.com/license/
+ */
 class Maintenance
 {
     /** @var string */
@@ -40,8 +36,7 @@ class Maintenance
         Filesystem $filesystem,
         BlockFactory $blockFactory,
         $baseDir = 'pub/errors/creatuity_maintenance/'
-    )
-    {
+    ) {
         $this->storeManager = $storeManager;
         $this->blockFactory = $blockFactory;
         $this->filesWrite = $filesystem->getDirectoryWrite(DirectoryList::ROOT);
@@ -146,7 +141,8 @@ class Maintenance
         if (!$this->filesWrite->isWritable($baseDir)) {
             throw new MaintenanceException(
                 "'{$baseDir}' is not writable. Please make this path temporary writable. "
-                . "Please do not forget to restore Your permissions!");
+                . "Please do not forget to restore Your permissions!"
+            );
         }
         $this->filesWrite->writeFile($filePath, $content);
     }

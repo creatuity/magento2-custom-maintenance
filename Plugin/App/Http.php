@@ -1,10 +1,4 @@
 <?php
-/**
- * @category       Creatuity
- * @package        Magento 2 Custom Maintenance
- * @copyright      Copyright (c) 2008-2017 Creatuity Corp. (http://www.creatuity.com)
- * @license        http://creatuity.com/license/
- */
 
 namespace Creatuity\CustomMaintenance\Plugin\App;
 
@@ -14,6 +8,12 @@ use Magento\Framework\App\Http as HttpApp;
 use Magento\Framework\Filesystem;
 use Psr\Log\LoggerInterface;
 
+/**
+ * @category       Creatuity
+ * @package        Magento 2 Custom Maintenance
+ * @copyright      Copyright (c) 2008-2017 Creatuity Corp. (http://www.creatuity.com)
+ * @license        http://creatuity.com/license/
+ */
 class Http
 {
     const MAINTENANCE_PAGE_PATH = 'errors/creatuity_maintenance/503.php';

@@ -1,10 +1,4 @@
 <?php
-/**
- * @category       Creatuity
- * @package        Magento 2 Custom Maintenance
- * @copyright      Copyright (c) 2008-2017 Creatuity Corp. (http://www.creatuity.com)
- * @license        http://creatuity.com/license/
- */
 
 namespace Creatuity\CustomMaintenance\Controller\Adminhtml;
 
@@ -16,6 +10,12 @@ use Magento\Framework\Controller\Result\RawFactory;
 use Magento\Framework\Message\ManagerInterface;
 use Magento\Framework\View\Element\BlockFactory;
 
+/**
+ * @category       Creatuity
+ * @package        Magento 2 Custom Maintenance
+ * @copyright      Copyright (c) 2008-2017 Creatuity Corp. (http://www.creatuity.com)
+ * @license        http://creatuity.com/license/
+ */
 abstract class AbstractAction extends Action
 {
     /** @var Maintenance */
@@ -39,8 +39,8 @@ abstract class AbstractAction extends Action
         Handler $errorHandler,
         RawFactory $resultRawFactory,
         BlockFactory $blockFactory,
-        ManagerInterface $messageManager)
-    {
+        ManagerInterface $messageManager
+    ) {
         parent::__construct($context);
 
         $this->maintenance = $maintenance;

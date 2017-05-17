@@ -1,10 +1,4 @@
 <?php
-/**
- * @category       Creatuity
- * @package        Magento 2 Custom Maintenance
- * @copyright      Copyright (c) 2008-2017 Creatuity Corp. (http://www.creatuity.com)
- * @license        http://creatuity.com/license/
- */
 
 namespace Creatuity\CustomMaintenance\Setup;
 
@@ -14,6 +8,12 @@ use Magento\Framework\Setup\InstallDataInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 
+/**
+ * @category       Creatuity
+ * @package        Magento 2 Custom Maintenance
+ * @copyright      Copyright (c) 2008-2017 Creatuity Corp. (http://www.creatuity.com)
+ * @license        http://creatuity.com/license/
+ */
 class InstallData implements InstallDataInterface
 {
     /** @var Maintenance */
