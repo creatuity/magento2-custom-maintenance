@@ -38,15 +38,14 @@ abstract class AbstractAction extends Action
         Maintenance $maintenance,
         Handler $errorHandler,
         RawFactory $resultRawFactory,
-        BlockFactory $blockFactory,
-        ManagerInterface $messageManager
+        BlockFactory $blockFactory
     ) {
         parent::__construct($context);
 
         $this->maintenance = $maintenance;
         $this->errorHandler = $errorHandler;
         $this->resultRawFactory = $resultRawFactory;
-        $this->messageManager = $messageManager;
+        $this->messageManager = $context->getMessageManager();
         $this->blockFactory = $blockFactory;
     }
 

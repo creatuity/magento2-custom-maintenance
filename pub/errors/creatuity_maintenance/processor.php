@@ -14,6 +14,8 @@ use Magento\Framework\Error\Processor as BaseProcessor;
 use Magento\Store\Model\StoreManager;
 use Psr\Log\LoggerInterface;
 
+require_once BP . '/pub/errors/processor.php';
+
 class Processor extends BaseProcessor
 {
     const REQUEST_MAINTENANCE = 'maintenance';
